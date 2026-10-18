@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AFKVAULT</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 24px;
+      background: #080d18;
+      color: #f4f7ff;
+      font-family: Arial, sans-serif;
+    }
+    .app { max-width: 520px; margin: auto; }
+    .brand { color: #7c9cff; font-size: 13px; letter-spacing: 4px; }
+    h1 { font-size: 36px; margin-bottom: 8px; }
+    .muted { color: #9ca9c3; line-height: 1.6; }
+    .card {
+      background: #111a2b;
+      border: 1px solid #263650;
+      border-radius: 18px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .status { color: #f5c96b; font-weight: bold; }
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 12px;
+      border: 0;
+      border-radius: 12px;
+      background: #6687ff;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    button:active { transform: scale(.98); }
+    .small { font-size: 12px; color: #8493af; }
+  </style>
+</head>
+<body>
+  <main class="app">
+    <p class="brand">AFKVAULT / CLOUD GAMING</p>
+    <h1>Your games.<br>Your vault.</h1>
+    <p class="muted">
+      Your future cloud gaming dashboard.
+      Manage sessions and keep track of your games.
+    </p>
+
+    <section class="card">
+      <p class="small">CLOUD SESSION</p>
+      <h2 id="session">No active session</h2>
+      <p class="status" id="status">● Prototype mode</p>
+      <button onclick="startSession()">Start demo session</button>
+      <button onclick="stopSession()" style="background:#263650">
+        Stop session
+      </button>
+      <p class="small" id="message">
+        Demo only. No cloud device is connected.
+      </p>
+    </section>
+
+    <section class="card">
+      <h3>🎮 Your games</h3>
+      <p>Roblox</p>
+      <p class="muted">Cloud device: Not connected</p>
+      <p class="small">
+        Actual Roblox streaming requires a compatible remote device.
+      </p>
+    </section>
+    <p class="small">AFKVAULT · Early prototype</p>
+  </main>
+
+  <script>
+    function startSession() {
+      document.getElementById("session").textContent = "Demo session active";
+      document.getElementById("status").textContent = "● Simulated";
+      document.getElementById("message").textContent =
+        "This is a local demo. No game is running in the cloud.";
+    }
+
+    function stopSession() {
+      document.getElementById("session").textContent = "No active session";
+      document.getElementById("status").textContent = "● Prototype mode";
+      document.getElementById("message").textContent =
+        "Demo stopped. No cloud device was used.";
+    }
+  </script>
+</body>
+</html>
